@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Finance App
+{% endblock%}
+
+
+{% block main %}
+    <table style="width:100%" cellspacing = "10" cellpadding = "10" align = "left">
+        <tr align = "left">
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+        
+        {% for row in rows %} 
+        <tr align = "left"> 
+            <td>{{ row["symbol"] }}</td>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["shares_num"] }}</td>
+            <td>{{ row["price"] }}</td>
+            <td>{{ row ["total"] }}</td>
+        </tr>
+        {% endfor %}
+        
+        
+        <tr align = "left">
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ cash }}</td>
+        </tr>
+        
+        <tr align = "left">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>{{ portfolio_total }}</th>
+        </tr>
+    
+    </table>
+{% endblock %}

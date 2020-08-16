@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+
+{% block main %}
+
+<table style="width:100%" cellspacing = "10" cellpadding = "10" align = "left">
+        <tr align = "left">
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
+        </tr>
+        
+        {% for row in rows %}
+        <tr align = "left"> 
+            <td>{{row ['symbol'] }}</td>   
+            <td>{{row ['shares_num'] }}</td>  
+            <td>{{row ['stock_price'] }}</td>  
+            <td>{{row ['transaction_time'] }}</td>  
+        </tr>
+        
+        {% endfor %}
+    
+</table>
+
+
+{% endblock %}
